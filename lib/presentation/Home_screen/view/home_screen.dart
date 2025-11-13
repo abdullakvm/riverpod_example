@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_example/presentation/Home_screen/controller/home_screen_controller.dart';
-import 'package:riverpod_example/presentation/Home_screen/state/home_screen_state.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
