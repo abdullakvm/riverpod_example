@@ -8,8 +8,9 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final counterState = ref.watch(homescreenProvider) as HomeScreenState;
+    final counterState = ref.watch(homescreenProvider);
     return Scaffold(
+      appBar: AppBar(title: Text(counterState.name!)),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           ref.read(homescreenProvider.notifier).onIncrement();
@@ -18,9 +19,18 @@ class HomeScreen extends ConsumerWidget {
       ),
       body: Center(
         child: Column(
+          spacing: 20,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text(counterState.count.toString())],
+          children: [
+            Text(counterState.count.toString()),
+            IconButton(
+              onPressed: () {
+                ref.read(homescreenProvider.notifier).onDecrement();
+              },
+              icon: Icon(Icons.exposure_minus_1_sharp),
+            ),
+          ],
         ),
       ),
     );
