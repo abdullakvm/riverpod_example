@@ -6,6 +6,6 @@ class QuotesScreenState {
   QuotesScreenState({this.isLoading = false , this.quotes});
 
   QuotesScreenState copyWith( {bool? isLoding, List<Quote>? quotes}) {
-    return QuotesScreenState(isLoading: isLoding ?? this.isLoading, quotes: quotes ?? this.quotes );
+    return QuotesScreenState(isLoading: isLoding ?? isLoading, quotes: quotes ?? this.quotes );
   }
 }

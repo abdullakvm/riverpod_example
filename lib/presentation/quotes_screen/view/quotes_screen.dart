@@ -21,7 +21,7 @@ class _State extends ConsumerState<QuotesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenState = ref.watch(qoutesScreenProvider) as QuotesScreenState;
+    final screenState = ref.watch(qoutesScreenProvider);
     return Scaffold(
       body: screenState.isLoading! ? Center(child: CircularProgressIndicator(),):
       
